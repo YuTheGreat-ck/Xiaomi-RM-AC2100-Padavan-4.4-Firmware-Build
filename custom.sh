@@ -1,10 +1,10 @@
 #!/bin/bash
 
-user_name="root"                                    # 用户名
-user_password="root"                                # 登录密码
-lan_ip="192.168.31"                                 # LAN 地址 别写后面的 .1
-wlan_2g_ssid="int_2.4G"                             # 2G 无线名称
-wlan_5g_ssid="int_5G"                               # 5G 无线名称
+user_name="yuthegreat"                                    # 用户名
+user_password="yuchao926"                                # 登录密码
+lan_ip="10.10.10.30"                                 # LAN 地址 别写后面的 .1
+wlan_2g_ssid="MT7603E"                             # 2G 无线名称
+wlan_5g_ssid="MT7615E"                               # 5G 无线名称
 wlan_guest_2g_ssid="int_pub_2.4G"                   # 2G 访客无线名称
 wlan_guest_5g_ssid="int_pub_5G"                     # 5G 访客无线名称
 wlan_2g_psk="qwerasdf"                              # 2G WIFI密码最少8位 空白为不设置
@@ -13,13 +13,13 @@ version_time=$(date +%Y%m%d)                        # 更新时版本号时间: 
 default_file="./user/shared/defaults.h"             # 默认配置文件
 
 echo "修改用户名"
-sed -i 's/SYS_USER_ROOT		"admin"/SYS_USER_ROOT		"'$user_name'"/g' $default_file
+sed -i 's/SYS_USER_ROOT		"yuthegreat"/SYS_USER_ROOT		"'$user_name'"/g' $default_file
 
 echo "修改登陆密码"
-sed -i 's/DEF_ROOT_PASSWORD	"admin"/DEF_ROOT_PASSWORD	"'$user_password'"/g' $default_file
+sed -i 's/DEF_ROOT_PASSWORD	"yuchao926"/DEF_ROOT_PASSWORD	"'$user_password'"/g' $default_file
 
 echo "修改 LAN IP 地址"
-sed -i "s/192.168.2/$lan_ip/g" $default_file
+sed -i "s/10.10.10.10/$lan_ip/g" $default_file
 
 echo "修改 2G 无线名称"
 sed -i 's/DEF_WLAN_2G_SSID	BOARD_PID "_%s"/DEF_WLAN_2G_SSID	"'$wlan_2g_ssid'"/g' $default_file
